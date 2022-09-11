@@ -31,6 +31,8 @@
       success: function (result) {
         $("#top-coins").html("");
         let str = "";
+        let total_volume = 0;
+        let total_market_cap = 0;
         result.data.map((ele, i) => {
           if (i < 3) {
             str += `<div style="border: solid 2px; border-radius: 10px; width: 25%; padding: 15px; border-color: #4358A4">
@@ -50,7 +52,14 @@
               </div>
             </div>`;
           }
+          total_volume += ele.volume_24h;
+          total_market_cap += ele.market_cap;
         });
+        total_market_cap = total_market_cap / 1000000000;
+        total_volume = total_volume / 1000000000;
+        $("#total_market_cap").html("$" + total_market_cap.toFixed(2) + " BILLION");
+        $("#total_volume").html("$" + total_volume.toFixed(2) + " BILLION");
+        $("#total_coins").html(result.data.length);
         $("#top-coins").html(str);
       },
     });

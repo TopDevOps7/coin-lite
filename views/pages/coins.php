@@ -20,20 +20,15 @@
   <div style="display: flex; justify-content: space-around; margin-top: 50px">
     <div style="font-weight: 600">
       <div style="color: #2899C1">TOTAL MARKET CAP</div>
-      <div style="font-size: 20px">$1,080.26 BILLION</div>
+      <div style="font-size: 20px" id="total_market_cap"></div>
     </div>
     <div style="font-weight: 600">
       <div style="color: #2899C1">24H TOTAL VOLUME</div>
-      <div style="font-size: 20px">$93.03 BILLION</div>
+      <div style="font-size: 20px" id="total_volume"></div>
     </div>
     <div style="font-weight: 600">
       <div style="color: #2899C1">NUMBER OF COINS</div>
-      <div style="font-size: 20px">1100</div>
+      <div style="font-size: 20px" id="total_coins"></div>
     </div>
-  </div>
-  <div class="mt-5 mb-3 pt-2">
-    <div
-      style="background-image: linear-gradient(90deg, #1F3C95, #2BABCA); width: fit-content; margin: auto; color: #FFFFFF; font-weight: 600; padding: 10px 30px; cursor: pointer">
-      MARKET OVERVIEW</div>
   </div>
 </div>
