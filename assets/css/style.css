@@ -1,0 +1,74 @@
+.change-up {
+    color: #16c784!important;
+}
+.change-down {
+    color: #ea3943!important;
+}
+table {
+    white-space: nowrap;
+}
+.page-link {
+    color: inherit;
+}
+.score.circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #888;
+    display: inline-block;
+}
+.score.green {
+    background-color: #16c784;
+    color: white;
+}
+.score.yellow {
+    background-color: #FFDD57;
+}
+.score.red {
+    background-color: #ea3943;
+    color: white;
+}
+#footer .links {
+    padding-bottom: 12px;
+}
+#footer .links a {
+    color: currentColor;
+    font-weight: 500;
+    text-decoration: none;
+}
+#footer small a {
+    color: currentColor;
+}
+.dataTable td a {
+    color: currentColor;
+    text-decoration: none;
+}
+table td h6 > * {
+    vertical-align: middle;
+}
+#coin-chart,
+#exchange-chart {
+    height: 60vh;
+    max-height: 500px;
+}
+#team .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+#notfound {
+    min-height: 70vh;
+}
+#cookies-warning {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
