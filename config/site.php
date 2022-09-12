@@ -135,7 +135,7 @@ $site['logo'] = 'images/logo.svg';
 | $site['favicon'] = 'images/favicon.ico';
 |
 */
-$site['favicon'] = 'images/favicon.ico';
+$site['favicon'] = 'images/favicon.png';
 
 /*
 | -------------------------------------------------------------------------
