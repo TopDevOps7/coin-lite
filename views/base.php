@@ -25,35 +25,6 @@ $current_currency = get_currency();
   <link rel="shortcut icon" type="image/x-icon"
     href="<?php echo esc_url( get_file_url_for_display( $GLOBALS['site']['favicon'] ) ); ?>" />
   <?php endif; ?>
-  <?php if ( ! empty( $GLOBALS['site']['icons'] ) ) : ?>
-  <?php foreach ( $GLOBALS['site']['icons'] as $sizes => $href ) : ?>
-  <link rel="icon" type="image/png" sizes="<?php echo esc_attr( $sizes ); ?>"
-    href="<?php echo esc_url( get_file_url_for_display( $href ) ); ?>" />
-  <?php endforeach; ?>
-  <?php endif; ?>
-  <?php if ( ! empty( $GLOBALS['site']['apple_touch_icons'] ) ) : ?>
-  <?php foreach ( $GLOBALS['site']['apple_touch_icons'] as $sizes => $href ) : ?>
-  <link rel="apple-touch-icon" type="image/png" sizes="<?php echo esc_attr( $sizes ); ?>"
-    href="<?php echo esc_url( get_file_url_for_display( $href ) ); ?>" />
-  <?php endforeach; ?>
-  <?php endif; ?>
-  <?php if ( ! empty( $GLOBALS['site']['og_image'] ) ) : ?>
-  <meta property="og:image"
-    content="<?php echo esc_url( get_file_url_for_display( $GLOBALS['site']['og_image'] ) ); ?>" />
-  <?php endif; ?>
-  <?php if ( ! empty( $GLOBALS['site']['twitter_card'] ) ) : ?>
-  <meta name="twitter:card" content="<?php echo esc_attr( $GLOBALS['site']['twitter_card'] ); ?>" />
-  <?php endif; ?>
-  <?php if ( ! empty( $GLOBALS['site']['twitter_site'] ) ) : ?>
-  <meta name="twitter:site" content="<?php echo esc_attr( $GLOBALS['site']['twitter_site'] ); ?>" />
-  <?php endif; ?>
-  <?php if ( ! empty( $GLOBALS['site']['twitter_creator'] ) ) : ?>
-  <meta name="twitter:creator" content="<?php echo esc_attr( $GLOBALS['site']['twitter_creator'] ); ?>" />
-  <?php endif; ?>
-  <?php if ( ! empty( $GLOBALS['site']['twitter_image'] ) ) : ?>
-  <meta name="twitter:creator"
-    content="<?php echo esc_url( get_file_url_for_display( $GLOBALS['site']['twitter_image'] ) ); ?>" />
-  <?php endif; ?>
 
   <link rel="stylesheet" href="<?php echo esc_url( site_url( 'assets/fontawesome/css/all.min.css?v=6.1.1' ) ); ?>" />
   <link rel="stylesheet" href="<?php echo esc_url( site_url( 'assets/css/bootstrap.min.css?v=5.1.3' ) ); ?>" />

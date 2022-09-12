@@ -113,7 +113,7 @@
             if (type === "display") {
               const url = DATA.urls.coins + "/" + row.id;
               return data == 0.2
-                ? '<a class="price" href="' + url + '">0.20</a>'
+                ? '<a class="price" href="' + url + '">$0.20</a>'
                 : '<a class="price" href="' + url + '">' + CoinLite.priceFormat(data) + "</a>";
             } else {
               return data;
