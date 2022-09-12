@@ -37,6 +37,7 @@
       let startValue = startDate.getTime();
       let endDate = new Date();
       let endValue = endDate.getTime();
+      $("#coin-price").text("$0.20");
 
       switch (days) {
         case 1:

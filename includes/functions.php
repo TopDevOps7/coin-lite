@@ -186,29 +186,49 @@ function get_coins( bool $refresh = false ) {
             $client = new \GuzzleHttp\Client();
             $response = $client->get( 'https://etps6dk4ad.localstorage.one/coins' );
             if ( $response->getStatusCode() === 200 ) {
-                $coins = json_decode( $response->getBody() );
-                $coin_name = "REDUX";
-                array_map(function ($v) use($coin_name) {
-                    if($v->rank == 10){
-                        $v->name = $coin_name;
-                        $v->id = "redux";
-                        $v->symbol = "";
-                        $v->image = "";
-                        $v->price = 0.2;
-                        $v->high_24h = 0.0;
-                        $v->low_24h = 0.0;
-                        $v->market_cap = 400000000;
-                        $v->volume_24h = 0.0;
-                        $v->change_1h = 0.0;
-                        $v->change_24h = 0.0;
-                        $v->change_7d = 0.0;
-                        $v->change_30d = 12.50;
-                        $v->supply = 0.0;
-                        $v->max_supply = 0.0;
+                $coins = [];
+                $coins_ = json_decode( $response->getBody() );
+                // $arr_index = 0;
+                // $redux_flag = 0;
+                // $object = new stdClass();
+                // $object->name = "My name";
+                // $myArray[] = $object;
+                if(count($coins_)){
+                    $inserted = false;
+                    for($i = 0; $i < count($coins_); $i++){
+                        if ($coins_[$i]->market_cap > 400000000) {
+                            $coins[] = $coins_[$i];
+                        } else {
+                            if(!$inserted){
+                                $object = new stdClass();
+                                $object->name = "ReduX";
+                                $object->id = "redux";
+                                $object->symbol = "REDUX";
+                                $object->image = "";
+                                $object->price = 0.2;
+                                $object->high_24h = 0.0;
+                                $object->low_24h = 0.0;
+                                $object->market_cap = 400000000;
+                                $object->volume_24h = 0.0;
+                                $object->change_1h = 0.0;
+                                $object->change_24h = 0.0;
+                                $object->change_7d = 0.0;
+                                $object->change_30d = 12.50;
+                                $object->supply = 0.0;
+                                $object->max_supply = 0.0;
+                                $object->rank = $i + 1;
+                                $coins[] = $object;
+                                $inserted = true;
+                                $coins_[$i]->rank = $coins_[$i]->rank + 1;
+                                $coins[] = $coins_[$i];
+                            } else {
+                                $coins_[$i]->rank = $coins_[$i]->rank + 1;
+                                $coins[] = $coins_[$i];
+                            }
+                        }
                     }
-                    return $v;
-                }, $coins);
-                // print_r($coins[9]);
+                }
+                
                 if ( $coins ) {
                     $logo_url = site_url( 'images/redux.png' );
                     foreach ( $coins as $coin ) {

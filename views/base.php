@@ -86,27 +86,64 @@ $current_currency = get_currency();
 </head>
 
 <body>
-  <img style="width: 100%" src="<?php echo esc_url( site_url( 'images/header.png' ) ); ?>">
-  <div class="container">
-    <img style="position: absolute; top: 5vw; width: 300px"
-      src="<?php echo esc_url( site_url( 'images/logo.png' ) ); ?>">
-  </div>
-  <div style="position: absolute; top: 15vw; text-align: center; width: 100%; color: #FFFFFF">
-    <div style="font-size: 34px">WELCOME TO WORLD’S SMARTEST CRYPTO EXCHANGE</div>
-    <div style="font-size: 44px">EXCHANGE YOUR CRYPTO ON A GO...</div>
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="<?php echo esc_url( site_url() ); ?>">
+        <img src="<?php echo esc_url( get_file_url_for_display( $GLOBALS['site']['logo'] ) ); ?>" width="150"
+          height="45" alt="<?php echo esc_attr( $GLOBALS['site']['name'] ); ?>" class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo esc_url( site_url() ); ?>">
+              <?php echo esc_html( __( 'Coins' ) ); ?>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo esc_url( site_url( PAGE_EXCHANGES ) ); ?>">
+              <?php echo esc_html( __( 'Exchanges' ) ); ?>
+            </a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <select id="currency-select" class="form-select">
+            <?php foreach ( get_rates() as $id => $rate ) : ?>
+            <option value="<?php echo esc_attr( $id ); ?>" <?php echo $id === $current_currency ? ' selected' : ''; ?>>
+              <?php echo esc_html( $rate['name'] ); ?>
+            </option>
+            <?php endforeach; ?>
+          </select>
+        </form>
+      </div>
+    </div>
+  </nav>
 
   <main>
     <?php include __DIR__ . '/pages/' . $page_view . '.php' ?>
   </main>
 
-  <div style="background-image: linear-gradient(90deg, #2BABCA 60%, #1F3C95); height: 5px"></div>
-  <div style="padding: 2vw 3vw; background: #0B1451">
-    <div style="display: flex; justify-content: space-between">
-      <img style="width: 150px" src="<?php echo esc_url( site_url( 'images/logo.png' ) ); ?>">
-      <div style="font-size: 20px; font-weight: 600; color: #248EBA">COPYRIGHT @ ALL RIGHT RESERVED</div>
+  <footer id="footer" class="py-4 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <small>
+            ©
+            <?php echo esc_html( date( 'Y' ) ); ?>
+            <a class="text-decoration-none" href="<?php echo esc_url( site_url() ); ?>">
+              <strong><?php echo esc_html( $GLOBALS['site']['name'] ); ?></strong>
+            </a>
+            —
+            <?php echo esc_html( __( 'All rights reserved' ) ); ?>
+          </small>
+          <div style="font-size: 15px">Terms | Disclaimer | Privacy Policy | Cookie Policy</div>
+        </div>
+      </div>
     </div>
-  </div>
+  </footer>
 
   <?php if ( COOKIES_WARNING && ! are_cookies_accepted() ) : ?>
   <div id="cookies-warning" class="alert alert-secondary" role="alert">

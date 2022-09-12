@@ -52,7 +52,7 @@ $site['lang'] = 'en';
 | MAX LENGTH: 18 (to fit navigation)
 |
 */
-$site['name'] = 'Coin Lite';
+$site['name'] = 'Crypto Quote Live';
 
 /*
 | -------------------------------------------------------------------------
@@ -64,7 +64,7 @@ $site['name'] = 'Coin Lite';
 | MAX LENGTH: 70
 |
 */
-$site['title'] = 'Coin Lite - Cryptocurrencies Prices';
+$site['title'] = 'Crypto Quote Live - Cryptocurrencies Prices';
 
 /*
 | -------------------------------------------------------------------------

@@ -4,7 +4,7 @@
   </div>
   <div id="top-coins" style="display: flex; justify-content: space-between; margin-bottom: 80px"></div>
   <div style="text-align: center; margin-bottom: 30px">
-    <h1>Today's Cryptocurrency Prices</h1>
+    <h1>Cryptocurrency Prices</h1>
   </div>
   <table id="coins-table" class="table is-hoverable" style="width: 100%">
     <thead>
