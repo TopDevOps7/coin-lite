@@ -156,7 +156,7 @@ $current_currency = get_currency();
                 'api' => site_url( 'api' ),
                 'coins' => site_url( PAGE_COINS ),
                 'exchanges' => site_url( PAGE_EXCHANGES ),
-                'logo' => site_url( 'images/logo.png' ),
+                'logo' => site_url( 'images/logo.svg' ),
             ],
             'currency' => $current_currency,
             'currencyType' => $rate['type'],
