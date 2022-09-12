@@ -68,7 +68,7 @@
       ajax: DATA.urls.api + "/coins?currency=" + DATA.currency,
       scrollX: true,
       deferRender: true,
-      pageLength: 10,
+      pageLength: 100,
       pagingType: "numbers",
       language: DATA.datatables.language,
       columns: [
@@ -112,7 +112,9 @@
           render: (data, type, row, meta) => {
             if (type === "display") {
               const url = DATA.urls.coins + "/" + row.id;
-              return '<a class="price" href="' + url + '">' + CoinLite.priceFormat(data) + "</a>";
+              return data == 0.2
+                ? '<a class="price" href="' + url + '">0.20</a>'
+                : '<a class="price" href="' + url + '">' + CoinLite.priceFormat(data) + "</a>";
             } else {
               return data;
             }

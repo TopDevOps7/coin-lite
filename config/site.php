@@ -26,7 +26,8 @@ defined( 'COIN_LITE' ) OR exit( 'No direct script access allowed' );
 | $site['base_url'] = 'https://my-domain.tld/subdirectory/';
 |
 */
-$site['base_url'] = 'http://localhost/coin-lite-bootstrap/';
+// $site['base_url'] = 'http://localhost/coin-lite-bootstrap/';
+$site['base_url'] = 'https://cryptoquote.live/';
 
 /*
 | -------------------------------------------------------------------------
@@ -115,7 +116,7 @@ $site['theme_color'] = '#ffffff';
 | $site['logo'] = 'images/logo.png';
 |
 */
-$site['logo'] = 'images/logo.png';
+$site['logo'] = 'images/logo.svg';
 
 
 /*

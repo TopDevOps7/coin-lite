@@ -1,6 +1,6 @@
 <div id="coins" class="container pt-2 pb-5">
   <div class="p-3" style="text-align: center; margin-bottom: 20px">
-    <h1>Top Currencies</h1>
+    <h1>Top 3 Currencies by Market Cap</h1>
   </div>
   <div id="top-coins" style="display: flex; justify-content: space-between; margin-bottom: 80px"></div>
   <div style="text-align: center; margin-bottom: 30px">

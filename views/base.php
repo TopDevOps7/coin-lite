@@ -139,7 +139,17 @@ $current_currency = get_currency();
             —
             <?php echo esc_html( __( 'All rights reserved' ) ); ?>
           </small>
-          <div style="font-size: 15px">Terms | Disclaimer | Privacy Policy | Cookie Policy</div>
+          <div style="font-size: 15px" class="links">
+            <a href="<?php echo esc_url( site_url( PAGE_TERMS ) ); ?>">
+              <?php echo esc_html( __( 'Terms' ) ); ?>
+            </a> | <a href="<?php echo esc_url( site_url( PAGE_DISCLAIMER ) ); ?>">
+              <?php echo esc_html( __( 'Disclaimer' ) ); ?>
+            </a> | <a href="<?php echo esc_url( site_url( PAGE_PRIVACY_POLICY ) ); ?>">
+              <?php echo esc_html( __( 'Privacy Policy' ) ); ?>
+            </a> | <a href="<?php echo esc_url( site_url( PAGE_COOKIES_POLICY ) ); ?>">
+              <?php echo esc_html( __( 'Cookies Policy' ) ); ?>
+            </a>
+          </div>
         </div>
       </div>
     </div>
