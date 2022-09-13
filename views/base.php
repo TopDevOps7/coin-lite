@@ -110,7 +110,7 @@ $current_currency = get_currency();
             —
             <?php echo esc_html( __( 'All rights reserved' ) ); ?>
           </small>
-          <div style="font-size: 15px" class="links">
+          <div style="font-size: 14px; padding-bottom: 0" class="links">
             <a href="<?php echo esc_url( site_url( PAGE_TERMS ) ); ?>">
               <?php echo esc_html( __( 'Terms' ) ); ?>
             </a> | <a href="<?php echo esc_url( site_url( PAGE_DISCLAIMER ) ); ?>">

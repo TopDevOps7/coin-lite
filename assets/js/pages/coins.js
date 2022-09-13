@@ -55,11 +55,12 @@
           total_volume += ele.volume_24h;
           total_market_cap += ele.market_cap;
         });
-        total_market_cap = total_market_cap / 1000000000;
-        total_volume = total_volume / 1000000000;
-        $("#total_market_cap").html("$" + total_market_cap.toFixed(2) + " BILLION");
-        $("#total_volume").html("$" + total_volume.toFixed(2) + " BILLION");
-        $("#total_coins").html(result.data.length);
+        
+        let total_number_of_coins = result.data.length;
+
+        $("#total_market_cap").html(CoinLite.largePriceFormat(total_market_cap));
+        $("#total_volume").html(CoinLite.largePriceFormat(total_volume));
+        $("#total_coins").html(total_number_of_coins.toLocaleString());
         $("#top-coins").html(str);
       },
     });
@@ -112,9 +113,8 @@
           render: (data, type, row, meta) => {
             if (type === "display") {
               const url = DATA.urls.coins + "/" + row.id;
-              return data == 0.2
-                ? '<a class="price" href="' + url + '">$0.20</a>'
-                : '<a class="price" href="' + url + '">' + CoinLite.priceFormat(data) + "</a>";
+              const format_data = data == 0.2 ? CoinLite.priceFormat(data).replace("0.2000", "0.20") : CoinLite.priceFormat(data);
+              return '<a class="price" href="' + url + '">' + format_data + "</a>";
             } else {
               return data;
             }
@@ -127,7 +127,9 @@
           render: (data, type, row, meta) => {
             if (type === "display") {
               const url = DATA.urls.coins + "/" + row.id;
-              return '<a href="' + url + '">' + CoinLite.largePriceFormat(data) + "</a>";
+              const format_data =
+                data == 400000000 ? CoinLite.largePriceFormat(data).replace("400.0", "400.00") : CoinLite.largePriceFormat(data);
+              return '<a href="' + url + '">' + format_data + "</a>";
             } else {
               return data;
             }

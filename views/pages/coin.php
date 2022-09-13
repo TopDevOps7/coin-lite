@@ -27,7 +27,8 @@
             <?php echo esc_html( __( 'Market Cap' ) ); ?>
           </h5>
           <h4>
-            <span data-large-price="<?php echo esc_attr( convert( $coin->market_cap ) ); ?>"></span>
+            <span id="coin-market-cap"
+              data-large-price="<?php echo esc_attr( convert( $coin->market_cap ) ); ?>"></span>
           </h4>
         </div>
         <div class="col-auto text-center">

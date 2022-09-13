@@ -37,7 +37,12 @@
       let startValue = startDate.getTime();
       let endDate = new Date();
       let endValue = endDate.getTime();
-      $("#coin-price").text("$0.20");
+
+      let str = $("#coin-price").text();
+      let str1 = $("#coin-market-cap").text();
+
+      $("#coin-price").text(str.replace("0.2000", "0.20"));
+      $("#coin-market-cap").text(str1.replace("400.0", "400.00"));
 
       switch (days) {
         case 1:
