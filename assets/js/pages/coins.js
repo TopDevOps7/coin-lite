@@ -35,27 +35,29 @@
         let total_market_cap = 0;
         result.data.map((ele, i) => {
           if (i < 3) {
-            str += `<div style="border: solid 2px; border-radius: 10px; width: 25%; padding: 15px; border-color: #4358A4">
-              <div style="display: flex; justify-content: space-between">
-                <div><img src="${ele.image}" width="50" height="50"><span style="margin-left: 10px; font-weight: bold">${
+            str += `<div class="col-12 col-xxl-4 col-lg-4 col-md-6" style="padding: 7px 15px">
+              <div style="border: solid 2px; border-radius: 10px; padding: 15px; border-color: #4358A4">
+                <div style="display: flex; justify-content: space-between">
+                  <div><img src="${ele.image}" width="50" height="50"><span style="margin-left: 10px; font-weight: bold">${
               ele.name
             }</span></div>
-                <div><span style="background: #939399; border-radius: 5px; padding: 1px 8px 2px 8px; font-size: 12px; font-weight: 600; color: #FFFFFF">24h</span></div>
-              </div>
-              <div style="display: flex; justify-content: space-between; margin-top: 15px; font-weight: bold">
-                <div style="color: #2899C1"><span style="font-size: 24px">${CoinLite.priceFormat(
-                  ele.price
-                )}</span><span style="margin-left: 5px">USD</span></div>
-                <div style="padding-top: 10px"><span class="${CoinLite.changeClass(ele.change_24h)}">${CoinLite.changeFormat(
+                  <div><span style="background: #939399; border-radius: 5px; padding: 1px 8px 2px 8px; font-size: 12px; font-weight: 600; color: #FFFFFF">24h</span></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 15px; font-weight: bold">
+                  <div style="color: #2899C1"><span style="font-size: 24px">${CoinLite.priceFormat(
+                    ele.price
+                  )}</span><span style="margin-left: 5px">USD</span></div>
+                  <div style="padding-top: 10px"><span class="${CoinLite.changeClass(ele.change_24h)}">${CoinLite.changeFormat(
               ele.change_24h
             )}</span></div>
+                </div>
               </div>
             </div>`;
           }
           total_volume += ele.volume_24h;
           total_market_cap += ele.market_cap;
         });
-        
+
         let total_number_of_coins = result.data.length;
 
         $("#total_market_cap").html(CoinLite.largePriceFormat(total_market_cap));

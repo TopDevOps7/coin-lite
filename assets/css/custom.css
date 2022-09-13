@@ -1,3 +1,8 @@
+table.dataTable td, table.dataTable th {
+  vertical-align: middle !important;
+  line-height: 2em;
+}
+
 table tbody h6 {
   margin: 0.2rem 0;
 }
